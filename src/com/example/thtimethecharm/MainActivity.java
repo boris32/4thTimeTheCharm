@@ -1,16 +1,40 @@
 package com.example.thtimethecharm;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
+	Button Button1;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		Button1 = (Button)findViewById(R.id.button1);
+		
+		Button1.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Log.i("ButtonTapped", "Button " + Button1.getText().toString() + " has been tapped");
+				//Intent openSharedPrefsScreen = new Intent("com.example.thtimethecharm.SHARED_PREFS_SCREEN");
+				Intent openSharedPrefsScreen = new Intent("android.intent.action.SHARED_PREFS_SCREEN");
+				startActivity(openSharedPrefsScreen);
+			}
+		});
+		
+		
+		
+		
 	}
 
 	@Override
@@ -31,4 +55,6 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	
 }
