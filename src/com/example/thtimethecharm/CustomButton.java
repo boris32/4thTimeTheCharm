@@ -8,6 +8,8 @@ public class CustomButton extends Button {
 	public CustomButton(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
+		
+		
 	}
 
 }
