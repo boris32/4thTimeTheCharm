@@ -35,14 +35,29 @@
             
         </LinearLayout>
         
+        
+        
+        
+        
         <LinearLayout
             android:id="@+id/ContentLayout" 
             android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="10" >
+        	android:layout_width="match_parent"
+        	android:layout_height="fill_parent"
+        	android:layout_weight="10" >    
+            
+            <fragment android:name="com.example.thtimethecharm.InitialFragment"
+            android:id="@+id/content_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+             />
             
         </LinearLayout>
+        
+        
+        
+        
         
     </LinearLayout>
     
@@ -50,7 +65,7 @@
     <LinearLayout 
         android:id="@+id/NavigationLayout"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="90"
         android:background="@android:color/black" >
@@ -58,15 +73,29 @@
         <LinearLayout 
             android:id="@+id/BackButtonContainer"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent" >
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:layout_gravity="left"
-            android:text="Button1" />
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_weight="80" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/custom_back_button"
+                android:gravity="center" />
+
+        </LinearLayout>
+        
+        
+        <LinearLayout 
+            android:id="@+id/BetweenButtonsOptionContainer"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_weight="20" >
+
         </LinearLayout>
         
 		<LinearLayout  
@@ -74,7 +103,8 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:gravity="end" >
+            android:gravity="center"
+            android:layout_weight="80" >
         <Button
             android:id="@+id/button2"
             android:layout_width="30dp"
