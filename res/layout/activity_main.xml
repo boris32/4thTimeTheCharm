@@ -39,21 +39,21 @@
         
         
         
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/ContentLayout" 
             android:orientation="vertical"
         	android:layout_width="match_parent"
         	android:layout_height="fill_parent"
         	android:layout_weight="10" >    
             
-            <fragment android:name="com.example.thtimethecharm.InitialFragment"
+            <fragment android:name="com.example.thtimethecharm.BlankFragment"
             android:id="@+id/content_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             
              />
             
-        </LinearLayout>
+        </FrameLayout>
         
         
         
