@@ -3,8 +3,8 @@ package com.example.thtimethecharm;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,16 +25,6 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		//SET FRAGMENTS
 		/*if (findViewById(R.id.ContentLayout) != null)
@@ -63,17 +53,6 @@ public class MainActivity extends ActionBarActivity {
 		*/
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		btn_Fwd = (Button)findViewById(R.id.button2);
 		btn_Back = (Button)findViewById(R.id.button1);
 		tv_ScreenTitle = (TextView)findViewById(R.id.tw_Header);		
@@ -86,18 +65,7 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				
-				OptionsFragment optionsFragment = new OptionsFragment();
-				
-				android.app.FragmentManager fm = getFragmentManager();
-				android.app.FragmentTransaction transaction = fm.beginTransaction();
-				
-				
-				transaction.replace(R.id.ContentLayout, optionsFragment);
-				transaction.addToBackStack(null);
-				transaction.commit();
-				
-				ChangeScreenTitle(optionsFragment.getTitle());
-				Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped");
+				OpenOptionsFragment();
 				
 			}
 		});		
@@ -107,19 +75,7 @@ public class MainActivity extends ActionBarActivity {
 					@Override
 					public void onClick(View v) {
 						
-						InitialFragment initialFragment = new InitialFragment();
-						
-						android.app.FragmentManager fm = getFragmentManager();
-						android.app.FragmentTransaction transaction = fm.beginTransaction();
-						
-						
-						transaction.replace(R.id.ContentLayout, initialFragment);
-						transaction.addToBackStack(null);
-						transaction.commit();					
-
-						
-						ChangeScreenTitle(initialFragment.getTitle());
-						Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped");
+						OpenInitialFragment();
 						
 					}
 				});	
@@ -133,33 +89,50 @@ public class MainActivity extends ActionBarActivity {
 		tv_ScreenTitle.setText(new_title);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public void OpenOptionsFragment()
+	{
+		OptionsFragment optionsFragment = new OptionsFragment();
+		
+		android.app.FragmentManager fm = getFragmentManager();
+		android.app.FragmentTransaction transaction = fm.beginTransaction();
+		transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+		
+		transaction.replace(R.id.ContentLayout, optionsFragment);
+		transaction.addToBackStack(null);
+		transaction.commit();
+		
+		ChangeScreenTitle(optionsFragment.getTitle());
+		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + optionsFragment.getName().toString());
 	}
+	
+	public void OpenInitialFragment()
+	{
+		InitialFragment initialFragment = new InitialFragment();
+		
+		android.app.FragmentManager fm = getFragmentManager();
+		android.app.FragmentTransaction transaction = fm.beginTransaction();
+		transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+		
+		
+		transaction.replace(R.id.ContentLayout, initialFragment);
+		transaction.addToBackStack(null);
+		transaction.commit();					
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+		
+		ChangeScreenTitle(initialFragment.getTitle());
+		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + initialFragment.getName().toString());
+	}
+	
+	
+	
+	/*public void GetFragment ()
+	{
+		android.app.FragmentManager framan = getFragmentManager();
+		Fragment testFrag = framan.findFragmentById(R.id.content_fragment);
+		int test = testFrag.getId();
+		
+		
+		ChangeScreenTitle(Integer.toString(test));
 	}*/
 	
 	
