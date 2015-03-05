@@ -19,7 +19,9 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 
 	Button btn_Fwd, btn_Back;
-	TextView tv_ScreenTitle;
+	TextView tv_ScreenSubTitle;
+	
+	public static int int_Navigation_Location = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +41,25 @@ public class MainActivity extends ActionBarActivity {
 			
 			getSupportFragmentManager().beginTransaction().add(R.id.ContentLayout, initial_Fragment).commit();*/
 			
-			/*FragmentManager fragmentManager = getFragmentManager();
-			FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+			FragmentManager fragmentManager = getFragmentManager();
+			FragmentTransaction transaction = fragmentManager.beginTransaction();
 			
-			Fragment initial_Fragment = new Fragment ();
-			FragmentTransaction transaction = getFragmentManager().beginTransaction();
+			NameAndAddress NameAndAddress_Fragment = new NameAndAddress();
 			
-			transaction.replace(R.id.ContentLayout, initial_Fragment);
+			transaction.replace(R.id.ContentLayout, NameAndAddress_Fragment);
 			transaction.addToBackStack(null);
 			transaction.commit();
 		
-		}
-		*/
+		//}
+
 		
 		
 		btn_Fwd = (Button)findViewById(R.id.button2);
 		btn_Back = (Button)findViewById(R.id.button1);
-		tv_ScreenTitle = (TextView)findViewById(R.id.tw_Header);		
+		tv_ScreenSubTitle = (TextView)findViewById(R.id.tv_Subtitle);		
 		
+		
+		//tv_ScreenSubTitle.setText(tv_ScreenSubTitle.getText() + "(" + int_Navigation_Location + ")");
 		
 		
 		
@@ -65,20 +68,46 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				
-				OpenOptionsFragment();
+				switch (int_Navigation_Location)
+				{
+				case 0: 
+					OpenNameAndAddressFragment();
+					int_Navigation_Location++;
+					break;
+				case 1: 
+					OpenPhoneNumberFragment();
+					int_Navigation_Location++;
+					break;
+				case 2:
+					OpenFiltersFragment();
+					int_Navigation_Location++;
+					break;
+				}
 				
 			}
 		});		
 		
 		btn_Back.setOnClickListener(new View.OnClickListener() {
 					
-					@Override
-					public void onClick(View v) {
-						
-						OpenInitialFragment();
-						
-					}
-				});	
+			@Override
+			public void onClick(View v) {
+				switch (int_Navigation_Location)
+				{
+				case 2: 
+					OpenNameAndAddressFragment();
+					int_Navigation_Location--;
+					break;
+				case 3: 
+					OpenPhoneNumberFragment();
+					int_Navigation_Location--;
+					break;
+				case 4:
+					OpenFiltersFragment();
+					int_Navigation_Location--;
+					break;
+				}
+			}
+		});	
 		
 		
 	}
@@ -86,42 +115,81 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void ChangeScreenTitle (String new_title)
 	{
-		tv_ScreenTitle.setText(new_title);
+		tv_ScreenSubTitle.setText(new_title + "(" + int_Navigation_Location + ")");
 	}
 	
-	public void OpenOptionsFragment()
+	public void OpenPhoneNumberFragment()
 	{
-		OptionsFragment optionsFragment = new OptionsFragment();
+		PhoneNumber PhoneNumber_Fragment = new PhoneNumber();
 		
 		android.app.FragmentManager fm = getFragmentManager();
 		android.app.FragmentTransaction transaction = fm.beginTransaction();
 		transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
 		
-		transaction.replace(R.id.ContentLayout, optionsFragment);
+		transaction.replace(R.id.ContentLayout, PhoneNumber_Fragment);
 		transaction.addToBackStack(null);
 		transaction.commit();
 		
-		ChangeScreenTitle(optionsFragment.getTitle());
-		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + optionsFragment.getName().toString());
+		ChangeScreenTitle(PhoneNumber_Fragment.getTitle());
+		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + PhoneNumber_Fragment.getName().toString());
 	}
 	
-	public void OpenInitialFragment()
+	public void OpenNameAndAddressFragment()
 	{
-		InitialFragment initialFragment = new InitialFragment();
+		NameAndAddress NameAndAddressFragment = new NameAndAddress();
 		
 		android.app.FragmentManager fm = getFragmentManager();
 		android.app.FragmentTransaction transaction = fm.beginTransaction();
 		transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
 		
 		
-		transaction.replace(R.id.ContentLayout, initialFragment);
+		transaction.replace(R.id.ContentLayout, NameAndAddressFragment);
 		transaction.addToBackStack(null);
 		transaction.commit();					
 
 		
-		ChangeScreenTitle(initialFragment.getTitle());
-		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + initialFragment.getName().toString());
+		ChangeScreenTitle(NameAndAddressFragment.getTitle());
+		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + NameAndAddressFragment.getName().toString());
 	}
+	
+	public void OpenFiltersFragment()
+	{
+		Filters FiltersFragment = new Filters();
+		
+		android.app.FragmentManager fm = getFragmentManager();
+		android.app.FragmentTransaction transaction = fm.beginTransaction();
+		transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+		
+		
+		transaction.replace(R.id.ContentLayout, FiltersFragment);
+		transaction.addToBackStack(null);
+		transaction.commit();					
+
+		
+		ChangeScreenTitle(FiltersFragment.getTitle());
+		Log.i("ButtonTapped", "Button " + btn_Fwd.getText().toString() + " has been tapped, current fragment is " + FiltersFragment.getName().toString());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

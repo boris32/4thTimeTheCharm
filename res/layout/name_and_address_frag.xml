@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/l_border1"        
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal" />            
+    
+    
+    <LinearLayout
+        android:id="@+id/NameLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <TextView
+        android:id="@+id/tv_PersonalInfoHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:text="Please provide your First and Last Name:" />        
+     </LinearLayout>
+        
+    
+    <LinearLayout
+        android:id="@+id/l_border2"        
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="horizontal" /> 
+    
+    
+    <LinearLayout
+        android:id="@+id/ll_Fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <LinearLayout 
+            android:id = "@+id/ll_Indent1"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />         
+        
+     <TextView
+        android:id="@+id/tv_FnameLabel"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:gravity="bottom"
+        android:text="First Name: " />
+     
+     <EditText
+        android:id="@+id/et_FirstName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+    </LinearLayout>
+    
+    
+    
+    <LinearLayout
+        android:id="@+id/ll_Lname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <LinearLayout 
+            android:id = "@+id/ll_Indent2"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />           
+        
+     <TextView
+        android:id="@+id/tv_LnameLabel"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:gravity="bottom"
+        android:text="Last Name: " />
+     
+     <EditText
+        android:id="@+id/et_LastName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName" >
+    </EditText>
+    </LinearLayout>
+    
+     
+     <LinearLayout
+        android:id="@+id/l_border3"        
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:orientation="horizontal" />  
+     
+     <LinearLayout
+        android:id="@+id/AddressLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <TextView
+        android:id="@+id/tv_AddressInfoHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:text="Please provide your Address:" />
+     </LinearLayout>  
+     
+     <LinearLayout
+        android:id="@+id/l_border4"        
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="horizontal" /> 
+    
+    
+    <LinearLayout
+        android:id="@+id/ll_Street"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <LinearLayout 
+            android:id = "@+id/ll_Indent3"
+        	android:layout_width="15dp"
+        	android:layout_height="wrap_content"
+        	android:orientation="horizontal" />         
+        
+     <TextView
+        android:id="@+id/tv_StreetLabel"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:gravity="bottom"
+        android:text="Street and Number: " />
+     
+     <EditText
+        android:id="@+id/et_Street"
+        android:layout_width="fill_parent"
+        android:textSize="12sp"
+        android:layout_height="wrap_content" >
+    </EditText>
+    
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:id="@+id/ll_City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <LinearLayout 
+            android:id = "@+id/ll_Indent4"
+        	android:layout_width="15dp"
+        	android:layout_height="wrap_content"
+        	android:orientation="horizontal" />         
+        
+     <TextView
+        android:id="@+id/tv_CityLabel"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:gravity="bottom"
+        android:text="City: " />
+     
+     <EditText
+        android:id="@+id/et_City"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" >
+    </EditText>
+    
+    </LinearLayout>
+     
+     
+     <LinearLayout
+        android:id="@+id/ll_Country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <LinearLayout 
+            android:id = "@+id/ll_Indent5"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />         
+        
+     <TextView
+        android:id="@+id/tv_CountryLabel"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:gravity="bottom"
+        android:text="Country: " />
+     
+     <EditText
+        android:id="@+id/et_Country"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" >
+    </EditText>
+    
+    </LinearLayout>
+     
+     
+     <LinearLayout
+         android:id="@+id/ll_Tip"         
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="bottom" >
+     
+         <TextView
+             android:id="@+id/tv_Tip"         
+       		 android:layout_width="match_parent"
+        	 android:layout_height="wrap_content"
+        	 android:gravity="center"
+        	 android:textSize="8sp"
+        	 android:text="Tip: Please make sure to populate this information correctly in order to ensure optimal service." />
+         
+     </LinearLayout>
+     
+
+
+</LinearLayout>
