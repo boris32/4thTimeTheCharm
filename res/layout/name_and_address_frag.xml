@@ -36,7 +36,8 @@
     <LinearLayout
         android:id="@+id/ll_Fname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:orientation="horizontal" >
         
         <LinearLayout 
@@ -56,12 +57,13 @@
      <EditText
         android:id="@+id/et_FirstName"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"        
         android:textSize="12sp"
         android:layout_weight="1"
         android:ems="10"
         android:gravity="bottom"
-        android:inputType="textPersonName" >
+        android:inputType="textPersonName"
+        android:background="@drawable/custom_edit_text" >
 
         <requestFocus />
     </EditText>
@@ -72,7 +74,8 @@
     <LinearLayout
         android:id="@+id/ll_Lname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:orientation="horizontal" >
         
         <LinearLayout 
@@ -96,7 +99,8 @@
         android:textSize="12sp"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName" >
+        android:inputType="textPersonName"
+        android:background="@drawable/custom_edit_text" >
     </EditText>
     </LinearLayout>
     
@@ -131,7 +135,8 @@
     <LinearLayout
         android:id="@+id/ll_Street"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:orientation="horizontal" >
         
         <LinearLayout 
@@ -152,7 +157,8 @@
         android:id="@+id/et_Street"
         android:layout_width="fill_parent"
         android:textSize="12sp"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edit_text" >
     </EditText>
     
     </LinearLayout>
@@ -161,7 +167,8 @@
     <LinearLayout
         android:id="@+id/ll_City"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:orientation="horizontal" >
         
         <LinearLayout 
@@ -182,7 +189,8 @@
         android:id="@+id/et_City"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp" >
+        android:textSize="12sp"
+        android:background="@drawable/custom_edit_text" >
     </EditText>
     
     </LinearLayout>
@@ -191,7 +199,8 @@
      <LinearLayout
         android:id="@+id/ll_Country"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
         android:orientation="horizontal" >
         
         <LinearLayout 
@@ -212,7 +221,8 @@
         android:id="@+id/et_Country"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp" >
+        android:textSize="12sp"
+        android:background="@drawable/custom_edit_text" >
     </EditText>
     
     </LinearLayout>
