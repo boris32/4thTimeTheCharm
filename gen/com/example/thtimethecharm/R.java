@@ -1638,16 +1638,20 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int back_button_focused=0x7f020033;
-        public static final int back_button_normal=0x7f020034;
-        public static final int back_button_pressed=0x7f020035;
-        public static final int button_focused1=0x7f020036;
-        public static final int button_normal1=0x7f020037;
-        public static final int button_pressed1=0x7f020038;
-        public static final int custom_back_button=0x7f020039;
-        public static final int custom_button1=0x7f02003a;
-        public static final int custom_edit_text=0x7f02003b;
-        public static final int ic_launcher=0x7f02003c;
+        public static final int avatar_icon=0x7f020033;
+        public static final int back_button_focused=0x7f020034;
+        public static final int back_button_normal=0x7f020035;
+        public static final int back_button_pressed=0x7f020036;
+        public static final int button_focused1=0x7f020037;
+        public static final int button_normal1=0x7f020038;
+        public static final int button_pressed1=0x7f020039;
+        public static final int city_icon=0x7f02003a;
+        public static final int country_icon=0x7f02003b;
+        public static final int custom_back_button=0x7f02003c;
+        public static final int custom_button1=0x7f02003d;
+        public static final int custom_edit_text=0x7f02003e;
+        public static final int home_icon=0x7f02003f;
+        public static final int ic_launcher=0x7f020040;
     }
     public static final class id {
         public static final int AddressLabel=0x7f090059;
